@@ -303,7 +303,17 @@
             <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
                 
                     <!-- Isolation Header -->
-                    <header class="header">
+                    <style>
+    #scheme-Isolation .header-nav span .tag-count {
+        float: right;
+    }
+    .tag-count {
+        background-color: #E8E8E8;
+        border-radius: 5px;
+        padding: 0px 2px 0px 2px;
+    }
+</style>
+<header class="header">
     <div class="header-wrapper">
         <!-- Header Copyright -->
         <div class="header-copyright">
@@ -312,8 +322,8 @@
                 <script type="text/javascript">
                     var fd = new Date();
                     document.write(fd.getFullYear());
-                </script>
-                &nbsp;Krun
+                </script> &nbsp;
+                Krun
             </div>
             <!--
             I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
@@ -323,9 +333,10 @@
             它不会影响美观并可以给开发者很大的支持。 :)
             -->
             <div>
-                Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a>
-                <br>
-                Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a>
+                Powered by
+                <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a>
+                <br> Theme -
+                <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a>
             </div>
         </div>
 
@@ -337,26 +348,66 @@
         </span>
 
         <p class="header-slogan header-item">
-        
             
-                Hi, nice to meet you
-            
-        
+                
+                            Hi, nice to meet you
+                                
+                                    
         </p>
 
         <!-- Header Nav -->
-        <nav class="header-nav header-item">
+        <nav class="header-nav header-item" style="width: 50%">
             <span class="header-nav-item">
                 <a href="/" title="Home">
-                    <span>主页</span>
+                    <span>
+                        主页
+                    </span>
                 </a>
             </span>
 
             <!-- Pages  -->
             
-            
-        </nav>
 
+                <span class="header-nav-item" style="list-style: none; width: 100%;">
+                <!-- Categories  -->
+                    
+                        <li class="dropdown">
+                            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                                标签
+                                 <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" style="list-style: none; -webkit-padding-start: 10px;">
+                                <li style="margin-bottom: 4px">
+                                <a class="tag-link" href="../../tags/Java/">Java<span class="tag-count">4</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../tags/JavaScript/">JavaScript<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../tags/反射/">反射<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../tags/算法/">算法<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../tags/编译原理/">编译原理<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../tags/面试题/">面试题<span class="tag-count">2</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                            <li class="divider"></li>
+                        
+                    
+                </span>
+
+                <span class="header-nav-item" style="list-style: none; width: 100%;">
+                    <!-- Archives  -->
+                    
+                        <li class="dropdown">
+                            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                                归档
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" style="list-style: none; -webkit-padding-start: 10px;">
+                                <li style="margin-bottom: 4px">
+                                    <a class="tag-link" href="03/">三月 2018<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="02/">二月 2018<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../2017/09/">九月 2017<span class="tag-count">2</span></a>
+                                </li>    
+                            </ul>
+                        </li>
+                        
+                            <li class="divider"></li>
+                        
+                    
+                </span>
+        </nav>
         <!-- Header SNS -->
         <div class="header-item header-sns_list">
     <!-- E-mail -->
@@ -396,6 +447,12 @@
 
     <!-- Telegram -->
     
+
+    
+        <a href="https://segmentfault.com/u/krun" target="_blank">
+            <i class="fa fa-hashtag fa-lg" aria-hidden="true"></i>
+        </a>
+        
 </div>
     </div>
 </header>
@@ -467,6 +524,200 @@
         <div class="post_entry-footer-info">
             <div class="post_entry-footer-date">
                 3月 20, 2018
+            </div>
+            <div class="post_entry-footer-comment">
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+        
+    
+        
+            
+            
+                <!-- Isolation Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post_entry Header -->
+    
+        <!-- Post Header Info -->
+        <div class="post_entry-header_info without-thumbnail">
+            <!-- Author Avatar & Name -->
+            <img src="../../img/head.jpg" class="avatar-img" width="44px" height="44px" alt="krun's avatar">
+            <span class="name-span">krun</span>
+        </div>
+
+        <!-- Null Thumbnail -->
+        <div class="post_thumbnail-null">
+    
+        </div>
+
+    <!-- Post_entry Content -->
+    <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
+        <!-- Post Title -->
+        <p class="post_entry-title">
+            <a href="../../2018/03/19/Java·关于一道面试题的思考/">Java·关于一道面试题的思考</a>
+        </p>
+
+        <!-- Post Excerpt -->
+        <p class="post_entry-excerpt">
+            
+                
+文中的速度测试部分，时间是通过简单的 System.currentTimeMillis() 计算得到的，又由于 Java 的特性，每次测试的结果都不一定相同，对于低数量级的情况有 ± 20 的浮动，对于高数量级的情况有的能有 ± 1000 的浮动。
+这道题本质上是个约瑟夫环问题，最佳解法在最下面，本文只是探究一下数组暴力和链表的表现差异。
+
+题目N 个人围成一...
+            
+            &nbsp;&nbsp;&nbsp;
+            <span>
+                <a href="../../2018/03/19/Java·关于一道面试题的思考/" target="_self">阅读全文</a>
+            </span>
+        </p>
+
+        <!-- Post Tags -->
+        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../../tags/Java/">Java</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../../tags/算法/">算法</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../../tags/面试题/">面试题</a></li></ul>
+    </div>
+
+    <!-- Post_entry Footer -->
+    <div class="post_entry-footer">
+        <div class="post_entry-footer-border"></div>
+        <div class="post_entry-footer-info">
+            <div class="post_entry-footer-date">
+                3月 19, 2018
+            </div>
+            <div class="post_entry-footer-comment">
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+        
+    
+        
+            
+            
+                <!-- Isolation Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post_entry Header -->
+    
+        <!-- Post Header Info -->
+        <div class="post_entry-header_info without-thumbnail">
+            <!-- Author Avatar & Name -->
+            <img src="../../img/head.jpg" class="avatar-img" width="44px" height="44px" alt="krun's avatar">
+            <span class="name-span">krun</span>
+        </div>
+
+        <!-- Null Thumbnail -->
+        <div class="post_thumbnail-null">
+    
+        </div>
+
+    <!-- Post_entry Content -->
+    <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
+        <!-- Post Title -->
+        <p class="post_entry-title">
+            <a href="../../2018/02/26/Java·变量里存的到底是什么/">Java·变量里存的到底是什么</a>
+        </p>
+
+        <!-- Post Excerpt -->
+        <p class="post_entry-excerpt">
+            
+                考虑下面这个例子：
+Long l1 = 1L;
+Long l2 = 2L;
+Long l3 = 3L;
+long l4 = 3L;
+Long l5 = 1 + 2L;
+System.out.println(l3 == 3);
+System.out.println(l4 == 3);
+System.out.println(l3.equals(3));
+System.out.println(l3.equals(l4));
+System.out.println(l3.equals(l5));
+
+输出的...
+            
+            &nbsp;&nbsp;&nbsp;
+            <span>
+                <a href="../../2018/02/26/Java·变量里存的到底是什么/" target="_self">阅读全文</a>
+            </span>
+        </p>
+
+        <!-- Post Tags -->
+        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../../tags/Java/">Java</a></li></ul>
+    </div>
+
+    <!-- Post_entry Footer -->
+    <div class="post_entry-footer">
+        <div class="post_entry-footer-border"></div>
+        <div class="post_entry-footer-info">
+            <div class="post_entry-footer-date">
+                2月 26, 2018
+            </div>
+            <div class="post_entry-footer-comment">
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+        
+    
+        
+            
+            
+                <!-- Isolation Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post_entry Header -->
+    
+        <!-- Post Header Info -->
+        <div class="post_entry-header_info without-thumbnail">
+            <!-- Author Avatar & Name -->
+            <img src="../../img/head.jpg" class="avatar-img" width="44px" height="44px" alt="krun's avatar">
+            <span class="name-span">krun</span>
+        </div>
+
+        <!-- Null Thumbnail -->
+        <div class="post_thumbnail-null">
+    
+        </div>
+
+    <!-- Post_entry Content -->
+    <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
+        <!-- Post Title -->
+        <p class="post_entry-title">
+            <a href="../../2018/02/09/Java·尝试解析器的总结/">Java·尝试解析器的总结</a>
+        </p>
+
+        <!-- Post Excerpt -->
+        <p class="post_entry-excerpt">
+            
+                写在前面由于我对写解析器只有 阅读了几篇文章 的知识量，因此水平并不是很高，此文权当一次个人总结，无法保证所涉及的知识点、思路完全无误，如有错误，还请各位大佬指正。
+从一个正整数表达式开始这篇文章围绕的仅仅是一个 ...
+            
+            &nbsp;&nbsp;&nbsp;
+            <span>
+                <a href="../../2018/02/09/Java·尝试解析器的总结/" target="_self">阅读全文</a>
+            </span>
+        </p>
+
+        <!-- Post Tags -->
+        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../../tags/Java/">Java</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../../tags/编译原理/">编译原理</a></li></ul>
+    </div>
+
+    <!-- Post_entry Footer -->
+    <div class="post_entry-footer">
+        <div class="post_entry-footer-border"></div>
+        <div class="post_entry-footer-info">
+            <div class="post_entry-footer-date">
+                2月 09, 2018
             </div>
             <div class="post_entry-footer-comment">
                 

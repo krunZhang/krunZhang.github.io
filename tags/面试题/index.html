@@ -45,14 +45,14 @@
     
     <title>
         
-            归档: 2018/3 | 
+            标签: 面试题 | 
         
         Krun
     </title>
 
     <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="../../../img/head.jpg">
-    <link rel="icon" href="../../../img/head.jpg">
+    <link rel="icon shortcut" type="image/ico" href="../../img/head.jpg">
+    <link rel="icon" href="../../img/head.jpg">
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="krun">
@@ -252,7 +252,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Krun">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="../../../img/head.jpg">
+    <link rel="apple-touch-icon" href="../../img/head.jpg">
 
     <!-- Site Verification -->
     
@@ -264,8 +264,8 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://krunZhang.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018/3 | Krun">
-    <meta property="og:image" content="../../../img/head.jpg">
+    <meta property="og:title" content="标签: 面试题 | Krun">
+    <meta property="og:image" content="../../img/head.jpg">
     <meta property="og:description" content="krun">
     
 
@@ -378,7 +378,7 @@
                             </a>
                             <ul class="dropdown-menu" style="list-style: none; -webkit-padding-start: 10px;">
                                 <li style="margin-bottom: 4px">
-                                <a class="tag-link" href="../../../tags/Java/">Java<span class="tag-count">4</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../tags/JavaScript/">JavaScript<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../tags/反射/">反射<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../tags/算法/">算法<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../tags/编译原理/">编译原理<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../tags/面试题/">面试题<span class="tag-count">2</span></a>
+                                <a class="tag-link" href="../Java/">Java<span class="tag-count">4</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../JavaScript/">JavaScript<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../反射/">反射<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../算法/">算法<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../编译原理/">编译原理<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="">面试题<span class="tag-count">2</span></a>
                                 </li>
                             </ul>
                         </li>
@@ -398,7 +398,7 @@
                             </a>
                             <ul class="dropdown-menu" style="list-style: none; -webkit-padding-start: 10px;">
                                 <li style="margin-bottom: 4px">
-                                    <a class="tag-link" href="">三月 2018<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../02/">二月 2018<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../2017/09/">九月 2017<span class="tag-count">2</span></a>
+                                    <a class="tag-link" href="../../archives/2018/03/">三月 2018<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../archives/2018/02/">二月 2018<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../archives/2017/09/">九月 2017<span class="tag-count">2</span></a>
                                 </li>    
                             </ul>
                         </li>
@@ -484,15 +484,14 @@
     <!-- Post_entry Header -->
     
         <!-- Post Header Info -->
-        <div class="post_entry-header_info with-thumbnail">
+        <div class="post_entry-header_info without-thumbnail">
             <!-- Author Avatar & Name -->
-            <img src="../../../img/head.jpg" class="avatar-img" width="44px" height="44px" alt="krun's avatar">
+            <img src="../../img/head.jpg" class="avatar-img" width="44px" height="44px" alt="krun's avatar">
             <span class="name-span">krun</span>
         </div>
 
-        <!-- Custom thumbnail -->
-        <div class="post_thumbnail-custom">
-            <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg">
+        <!-- Null Thumbnail -->
+        <div class="post_thumbnail-null">
     
         </div>
 
@@ -500,22 +499,26 @@
     <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
         <!-- Post Title -->
         <p class="post_entry-title">
-            <a href="../../../2018/03/20/你好，世界！/">你好，世界！</a>
+            <a href="../../2018/03/19/Java·关于一道面试题的思考/">Java·关于一道面试题的思考</a>
         </p>
 
         <!-- Post Excerpt -->
         <p class="post_entry-excerpt">
             
                 
+文中的速度测试部分，时间是通过简单的 System.currentTimeMillis() 计算得到的，又由于 Java 的特性，每次测试的结果都不一定相同，对于低数量级的情况有 ± 20 的浮动，对于高数量级的情况有的能有 ± 1000 的浮动。
+这道题本质上是个约瑟夫环问题，最佳解法在最下面，本文只是探究一下数组暴力和链表的表现差异。
+
+题目N 个人围成一...
             
             &nbsp;&nbsp;&nbsp;
             <span>
-                <a href="../../../2018/03/20/你好，世界！/" target="_self">阅读全文</a>
+                <a href="../../2018/03/19/Java·关于一道面试题的思考/" target="_self">阅读全文</a>
             </span>
         </p>
 
         <!-- Post Tags -->
-        
+        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../Java/">Java</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../算法/">算法</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="">面试题</a></li></ul>
     </div>
 
     <!-- Post_entry Footer -->
@@ -523,7 +526,7 @@
         <div class="post_entry-footer-border"></div>
         <div class="post_entry-footer-info">
             <div class="post_entry-footer-date">
-                3月 20, 2018
+                3月 19, 2018
             </div>
             <div class="post_entry-footer-comment">
                 
@@ -544,14 +547,15 @@
     <!-- Post_entry Header -->
     
         <!-- Post Header Info -->
-        <div class="post_entry-header_info without-thumbnail">
+        <div class="post_entry-header_info with-thumbnail">
             <!-- Author Avatar & Name -->
-            <img src="../../../img/head.jpg" class="avatar-img" width="44px" height="44px" alt="krun's avatar">
+            <img src="../../img/head.jpg" class="avatar-img" width="44px" height="44px" alt="krun's avatar">
             <span class="name-span">krun</span>
         </div>
 
-        <!-- Null Thumbnail -->
-        <div class="post_thumbnail-null">
+        <!-- Custom thumbnail -->
+        <div class="post_thumbnail-custom">
+            <img src="https://images.pexels.com/photos/127512/pexels-photo-127512.jpeg">
     
         </div>
 
@@ -559,26 +563,29 @@
     <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
         <!-- Post Title -->
         <p class="post_entry-title">
-            <a href="../../../2018/03/19/Java·关于一道面试题的思考/">Java·关于一道面试题的思考</a>
+            <a href="../../2017/09/18/算法·JavaScript·电话号码分身-小米2017秋招真题/">算法·JavaScript·电话号码分身(小米2017秋招真题)</a>
         </p>
 
         <!-- Post Excerpt -->
         <p class="post_entry-excerpt">
             
                 
-文中的速度测试部分，时间是通过简单的 System.currentTimeMillis() 计算得到的，又由于 Java 的特性，每次测试的结果都不一定相同，对于低数量级的情况有 ± 20 的浮动，对于高数量级的情况有的能有 ± 1000 的浮动。
-这道题本质上是个约瑟夫环问题，最佳解法在最下面，本文只是探究一下数组暴力和链表的表现差异。
+题目描述
 
-题目N 个人围成一...
+
+继MIUI8推出手机分身功能，MIUI计划推出一个电话号码分身得功能：首先将电话号码中的每个数字加上8取个位，然后使用对应得大写字母代替 (“ZERO”, “ONE”, “TWO”, “THREE”, “FOUR”, “FIVE”, “SIX”, “SEVEN”, “EIGHT”, “NINE”), 然后随机打乱这些字母，所生成得字符串即为电话号码对应得分身。
+
+
+例子:输入...
             
             &nbsp;&nbsp;&nbsp;
             <span>
-                <a href="../../../2018/03/19/Java·关于一道面试题的思考/" target="_self">阅读全文</a>
+                <a href="../../2017/09/18/算法·JavaScript·电话号码分身-小米2017秋招真题/" target="_self">阅读全文</a>
             </span>
         </p>
 
         <!-- Post Tags -->
-        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../../../tags/Java/">Java</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../../../tags/算法/">算法</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../../../tags/面试题/">面试题</a></li></ul>
+        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../JavaScript/">JavaScript</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../算法/">算法</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="">面试题</a></li></ul>
     </div>
 
     <!-- Post_entry Footer -->
@@ -586,7 +593,7 @@
         <div class="post_entry-footer-border"></div>
         <div class="post_entry-footer-info">
             <div class="post_entry-footer-date">
-                3月 19, 2018
+                9月 18, 2017
             </div>
             <div class="post_entry-footer-comment">
                 
@@ -670,7 +677,7 @@
 <script>
 	var agent = navigator.userAgent.toLowerCase();
 	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="../../../css/uc.css">');
+		document.write('<link rel="stylesheet" href="../../css/uc.css">');
 	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
 	}
 </script>

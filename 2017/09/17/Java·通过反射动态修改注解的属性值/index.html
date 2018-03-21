@@ -45,18 +45,18 @@
     
     <title>
         
-            归档: 2018/3 | 
+            Java·通过反射动态修改注解的属性值 | 
         
         Krun
     </title>
 
     <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="../../../img/head.jpg">
-    <link rel="icon" href="../../../img/head.jpg">
+    <link rel="icon shortcut" type="image/ico" href="../../../../img/head.jpg">
+    <link rel="icon" href="../../../../img/head.jpg">
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="krun">
-    <meta name="keywords" content="krun">
+    <meta name="keywords" content="krun,Java,反射">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -83,6 +83,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/prettify/github.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -252,7 +255,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Krun">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="../../../img/head.jpg">
+    <link rel="apple-touch-icon" href="../../../../img/head.jpg">
 
     <!-- Site Verification -->
     
@@ -264,11 +267,14 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://krunZhang.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018/3 | Krun">
-    <meta property="og:image" content="../../../img/head.jpg">
+    <meta property="og:title" content="Java·通过反射动态修改注解的属性值 | Krun">
+    <meta property="og:image" content="../../../../img/head.jpg">
     <meta property="og:description" content="krun">
-    
+    <meta property="og:article:tag" content="Java"> <meta property="og:article:tag" content="反射"> 
 
+    
+        <meta property="article:published_time" content="Sun Sep 17 2017 12:33:00 GMT+0800">
+        <meta property="article:modified_time" content="Wed Mar 21 2018 13:08:26 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -283,6 +289,36 @@
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://krunZhang.github.io",
+    "headline": "Java·通过反射动态修改注解的属性值",
+    "datePublished": "Sun Sep 17 2017 12:33:00 GMT+0800",
+    "dateModified": "Wed Mar 21 2018 13:08:26 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "krun",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/head.jpg"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Krun",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/head.jpg"
+        }
+    },
+    "keywords": ",Java,反射krun",
+    "description": "krun",
+}
+</script>
 
 
     
@@ -378,7 +414,7 @@
                             </a>
                             <ul class="dropdown-menu" style="list-style: none; -webkit-padding-start: 10px;">
                                 <li style="margin-bottom: 4px">
-                                <a class="tag-link" href="../../../tags/Java/">Java<span class="tag-count">4</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../tags/JavaScript/">JavaScript<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../tags/反射/">反射<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../tags/算法/">算法<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../tags/编译原理/">编译原理<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../tags/面试题/">面试题<span class="tag-count">2</span></a>
+                                <a class="tag-link" href="../../../../tags/Java/">Java<span class="tag-count">4</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../tags/JavaScript/">JavaScript<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../tags/反射/">反射<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../tags/算法/">算法<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../tags/编译原理/">编译原理<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../tags/面试题/">面试题<span class="tag-count">2</span></a>
                                 </li>
                             </ul>
                         </li>
@@ -398,7 +434,7 @@
                             </a>
                             <ul class="dropdown-menu" style="list-style: none; -webkit-padding-start: 10px;">
                                 <li style="margin-bottom: 4px">
-                                    <a class="tag-link" href="">三月 2018<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../02/">二月 2018<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../2017/09/">九月 2017<span class="tag-count">2</span></a>
+                                    <a class="tag-link" href="../../../../archives/2018/03/">三月 2018<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../archives/2018/02/">二月 2018<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../archives/2017/09/">九月 2017<span class="tag-count">2</span></a>
                                 </li>    
                             </ul>
                         </li>
@@ -466,144 +502,246 @@
 
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
 
-    <!-- Normal Post -->
-    
-        
-            
-            
-                <!-- Isolation Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post_entry Header -->
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+
+
+    <!-- Isolation Post Header -->
+    <!-- Post thumbnail -->
     
         <!-- Post Header Info -->
-        <div class="post_entry-header_info with-thumbnail">
+        <div class="post-header_info with-thumbnail">
             <!-- Author Avatar & Name -->
-            <img src="../../../img/head.jpg" class="avatar-img" width="44px" height="44px" alt="krun's avatar">
+            <img src="../../../../img/head.jpg" class="avatar-img" width="44px" height="44px" alt="krun's avatar">
             <span class="name-span">krun</span>
         </div>
 
         <!-- Custom thumbnail -->
         <div class="post_thumbnail-custom">
-            <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg">
+            <img src="https://sfault-image.b0.upaiyun.com/586/692/586692790-59bf18be2b22d_articlex">
     
         </div>
 
-    <!-- Post_entry Content -->
-    <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
-        <!-- Post Title -->
-        <p class="post_entry-title">
-            <a href="../../../2018/03/20/你好，世界！/">你好，世界！</a>
-        </p>
 
-        <!-- Post Excerpt -->
-        <p class="post_entry-excerpt">
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+
+    
+        <div class="post-content_wrapper">
+            <p class="post-title">
+                Java·通过反射动态修改注解的属性值
+            </p>
+            <p>昨晚在 <em>SegmentFault</em> 看到一条<a href="#https://segmentfault.com/q/1010000010773372">问题</a>，大意是楼主希望可以动态得建立多个 <em>Spring</em> 的定时任务。</p>
+<p>这个题目我并不是很熟悉，不过根据题目描述和查阅相关 <em>Spring 创建定时任务</em> 的资料，发现这也许涉及到通过Java代码动态修改注解的属性值。</p>
+<p>今天尝试了一番，发现通过反射来动态修改注解的属性值是可以做到的：</p>
+<p>众所周知，<code>java/lang/reflect</code> 这个包下面都是Java的反射类和工具。</p>
+<p><code>Annotation</code> 注解，也是位于这个包里的。注解自从Java 5.0版本引入后，就成为了Java平台中非常重要的一部分，常见的如 <code>@Override</code>、 <code>@Deprecated</code>。</p>
+<p>关于注解更详细的信息和使用方法，网上已经有很多资料，这里就不再赘述了。</p>
+<p>一个注解通过 <code>@Retention</code> 指定其生命周期，本文所讨论的动态修改注解属性值，建立在 <code>@Retention(RetentionPolicy.RUNTIM)</code> 这种情况。毕竟这种注解才能在运行时(runtime)通过反射机制进行操作。</p>
+<p>那么现在我们定义一个 <code>@Foo</code> 注解，它有一个类型为 <code>String</code> 的 <code>value</code> 属性，该注解应用再<code>Field</code>上:</p>
+<pre><code class="java">@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Foo {
+
+    String value();
+
+}
+
+</code></pre>
+<p>再定义一个普通的Java对象 <code>Bar</code>，它有一个私有的<code>String</code>属性 <code>val</code>，并为它设置属性值为<code>&quot;fff&quot;</code> 的 <code>@Foo</code> 注解:</p>
+<pre><code class="java">public class Bar {
+
+    @Foo (&quot;fff&quot;)
+    private String val;
+
+}
+
+</code></pre>
+<p>接下来在 <code>main</code> 方法中我们来尝试修改 <code>Bar.val</code> 上的 <code>@Foo</code>注解的属性值为 <code>&quot;ddd&quot;</code>。</p>
+<p>先是正常的获取注解属性值:</p>
+<pre><code class="java">public class Main {
+    public static void main(String ...args) throws NoSuchFieldException {
+        //获取Bar实例
+        Bar bar = new Bar();
+        //获取Bar的val字段
+        Field field = Bar.class.getDeclaredField(&quot;val&quot;);
+        //获取val字段上的Foo注解实例
+        Foo foo = field.getAnnotation(Foo.class);
+        //获取Foo注解实例的 value 属性值
+        String value = foo.value();
+        //打印该值
+        System.out.println(value); // fff
+    }
+}
+
+</code></pre>
+<p>首先，我们要知道注解的值是存在哪里的。</p>
+<p>在 <code>String value = foo.value();</code> 处下断点，我们跑一下可以发现：</p>
+<p><img src="https://sfault-image.b0.upaiyun.com/586/692/586692790-59bf18be2b22d_articlex" alt="clipboard.png"></p>
+<p>当前栈中有这么几个变量，不过其中有一点很特别：<code>foo</code>，其实是个<code>Proxy</code>实例。</p>
+<p><code>Proxy</code>也是 <code>java/lang/reflect</code>下的东西，它的作用是为一个Java类生成一个代理，就像这样：</p>
+<pre><code class="java">public interface A {
+    String func1();
+}
+
+public class B implements A {
+
+    @Override
+    public String func1() { //do something ... }
+
+    public String func2() { //do something ... };
+}
+
+public static void main(String ...args) {
+    B bInstance = new B();
+
+    B bProxy = Proxy.newProxyInstance(
+        // B 类的类加载器
+        B.class.getClassLoader(), 
+        // B 类所实现的接口。
+        // 如果你想拦截B类的某个方法，必须让这个方法在某个接口中声明并让B类实现该接口
+        B.class.getInterfaces(), 
+        // 调用处理器，任何对 B类 所实现的接口方法的调用都会触发此处理器
+        new InvocationHandler() { 
+            @Override
+            public Object invoke (
+                    // 这个是代理的实例，method.invoke时不能使用这个，否则会死循环
+                    Object proxy, 
+                    // 触发的接口方法
+                   Method method,
+                    // 此次调用该方法的参数
+                    Object[] args) throws Throwable {
+                System.out.println(String.format(&quot;调用 %s 之前&quot;, method.getName()));
+                /**
+                 * 这里必须使用B类的某个具体实现类的实例，因为触发时这里的method只是一个接口方法的引用，
+                 * 也就是说它是空的，你需要为它指定具有逻辑的上下文(bInstance)。
+                 */
+                Object obj = method.invoke(bInstance, args); 
+                System.out.println(String.format(&quot;调用 %s 之后&quot;, method.getName()));
+                return obj; //返回调用结果
+            }
+        }
+    );
+}
+
+</code></pre>
+<p>这样你就可以拦截这个Java类的某个方法调用，但是你只能拦截到 <code>func1</code>的调用，想想为什么？</p>
+<p>那么注意了：</p>
+<p><code>ClassLoader</code> 这是个<code>class</code>就会有，注解也不例外。那么注解和<code>interfaces</code>有什么关系?</p>
+<p>注解本质上就是一个接口，它的实质定义为: <code>interface SomeAnnotation extends Annotation</code>。<br>这个 <code>Annotation</code> 接口位于 <code>java/lang/annotation</code> 包，它的注释中第一句话就是 <code>The common interface extended by all annotation types.</code></p>
+<p>如此说来，<code>Foo</code> 注解本身只是个接口，这就意味着它没有任何代码逻辑，那么它的 <code>value</code> 属性究竟是存在哪里的呢？</p>
+<p>展开 <code>foo</code> 可以发现：</p>
+<p><img src="https://sfault-image.b0.upaiyun.com/394/511/3945110165-59bf1caa159d8_articlex" alt="clipboard.png"></p>
+<p>这个 <code>Proxy</code> 实例持有一个 <code>AnnotationInvocationHandler</code>，还记得之前提到过如何创建一个 <code>Proxy</code> 实例么? 第三个参数就是一个 <code>InvocationHandler</code>。<br>看名字这个<code>handler</code>即是<code>Annotation</code>所特有的，我们看一下它的代码：</p>
+<pre><code class="java">class AnnotationInvocationHandler implements InvocationHandler, Serializable {
+
+    private final Class&lt;? extends Annotation&gt; type;
+    private final Map&lt;String, Object&gt; memberValues;
+    private transient volatile Method[] memberMethods = null;
+
+    /* 后续无关代码就省略了，想看的话可以查看 
+     * sun/reflect/annotation/AnnotationInvocationHandler
+     */
+
+}
+
+</code></pre>
+<p>我们一眼就可以看到一个有意思的名字: <code>memberValues</code>，这是一个Map，而断点中可以看到这是一个 <code>LinknedHashMap</code>，<code>key</code>为注解的属性名称，<code>value</code>即为注解的属性值。</p>
+<p>现在我们找到了注解的属性值存在哪里了，那么接下来的事就好办了：</p>
+<pre><code class="java">
+public class Main {
+    public static void main(String ...args) throws NoSuchFieldException, IllegalAccessException {
+        //获取Bar实例
+        Bar bar = new Bar();
+        //获取Bar的val字段
+        Field field = Bar.class.getDeclaredField(&quot;val&quot;);
+        //获取val字段上的Foo注解实例
+        Foo foo = field.getAnnotation(Foo.class);
+        //获取 foo 这个代理实例所持有的 InvocationHandler
+        InvocationHandler h = Proxy.getInvocationHandler(foo);
+        // 获取 AnnotationInvocationHandler 的 memberValues 字段
+        Field hField = h.getClass().getDeclaredField(&quot;memberValues&quot;);
+        // 因为这个字段事 private final 修饰，所以要打开权限
+        hField.setAccessible(true);
+        // 获取 memberValues
+        Map memberValues = (Map) hField.get(h);
+        // 修改 value 属性值
+        memberValues.put(&quot;value&quot;, &quot;ddd&quot;);
+        // 获取 foo 的 value 属性值
+        String value = foo.value();
+        System.out.println(value); // ddd
+    }
+}
+</code></pre>
+
             
-                
+                <blockquote>
+                    <p>
+                         
+                            本作品采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">署名-非商业性使用-禁止演绎 4.0 国际许可协议</a> 进行许可。
+                        
+                        <br>
+                        本文链接： https://krunZhang.github.io/2017/09/17/Java·通过反射动态修改注解的属性值/
+                    </p>
+                </blockquote>
             
-            &nbsp;&nbsp;&nbsp;
-            <span>
-                <a href="../../../2018/03/20/你好，世界！/" target="_self">阅读全文</a>
-            </span>
-        </p>
-
-        <!-- Post Tags -->
-        
-    </div>
-
-    <!-- Post_entry Footer -->
-    <div class="post_entry-footer">
-        <div class="post_entry-footer-border"></div>
-        <div class="post_entry-footer-info">
-            <div class="post_entry-footer-date">
-                3月 20, 2018
-            </div>
-            <div class="post_entry-footer-comment">
-                
-                
-            </div>
         </div>
-    </div>
+    
 </div>
 
-            
-        
-    
-        
-            
-            
-                <!-- Isolation Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post_entry Header -->
-    
-        <!-- Post Header Info -->
-        <div class="post_entry-header_info without-thumbnail">
-            <!-- Author Avatar & Name -->
-            <img src="../../../img/head.jpg" class="avatar-img" width="44px" height="44px" alt="krun's avatar">
-            <span class="name-span">krun</span>
-        </div>
 
-        <!-- Null Thumbnail -->
-        <div class="post_thumbnail-null">
-    
-        </div>
-
-    <!-- Post_entry Content -->
-    <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
-        <!-- Post Title -->
-        <p class="post_entry-title">
-            <a href="../../../2018/03/19/Java·关于一道面试题的思考/">Java·关于一道面试题的思考</a>
-        </p>
-
-        <!-- Post Excerpt -->
-        <p class="post_entry-excerpt">
-            
                 
-文中的速度测试部分，时间是通过简单的 System.currentTimeMillis() 计算得到的，又由于 Java 的特性，每次测试的结果都不一定相同，对于低数量级的情况有 ± 20 的浮动，对于高数量级的情况有的能有 ± 1000 的浮动。
-这道题本质上是个约瑟夫环问题，最佳解法在最下面，本文只是探究一下数组暴力和链表的表现差异。
-
-题目N 个人围成一...
-            
-            &nbsp;&nbsp;&nbsp;
-            <span>
-                <a href="../../../2018/03/19/Java·关于一道面试题的思考/" target="_self">阅读全文</a>
-            </span>
-        </p>
-
-        <!-- Post Tags -->
-        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../../../tags/Java/">Java</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../../../tags/算法/">算法</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="../../../tags/面试题/">面试题</a></li></ul>
-    </div>
-
-    <!-- Post_entry Footer -->
-    <div class="post_entry-footer">
-        <div class="post_entry-footer-border"></div>
-        <div class="post_entry-footer-info">
-            <div class="post_entry-footer-date">
-                3月 19, 2018
-            </div>
-            <div class="post_entry-footer-comment">
+                    <!-- Paradox Post Info -->
+                    
                 
+
+                <!-- Post Comments -->
+                
+                    
                 
             </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="../../18/算法·JavaScript·电话号码分身-小米2017秋招真题/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
         </div>
     </div>
-</div>
 
-            
-        
-    
-
-    
-
-    
-</div>
 
 
                     
@@ -670,13 +808,17 @@
 <script>
 	var agent = navigator.userAgent.toLowerCase();
 	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="../../../css/uc.css">');
+		document.write('<link rel="stylesheet" href="../../../../css/uc.css">');
 	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
 	}
 </script>
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/prettify.min.js", true)</script>
+        
     
 
 
@@ -690,6 +832,11 @@
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     

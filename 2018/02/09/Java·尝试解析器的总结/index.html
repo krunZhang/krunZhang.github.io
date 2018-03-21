@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Java·尝试解析器的总结 | 
+        
+        Krun
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="../../../../img/head.jpg">
+    <link rel="icon" href="../../../../img/head.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="krun">
+    <meta name="keywords" content="krun,Java,编译原理">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/prettify/github.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+        
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/fontawesome.min.css">
+        
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: regular;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
+        }
+    </style>
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/jquery.min.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Krun">
+    <meta name="msapplication-starturl" content="https://krunZhang.github.io">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Krun">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="../../../../img/head.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://krunZhang.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Java·尝试解析器的总结 | Krun">
+    <meta property="og:image" content="../../../../img/head.jpg">
+    <meta property="og:description" content="krun">
+    <meta property="og:article:tag" content="Java"> <meta property="og:article:tag" content="编译原理"> 
+
+    
+        <meta property="article:published_time" content="Fri Feb 09 2018 12:58:09 GMT+0800">
+        <meta property="article:modified_time" content="Wed Mar 21 2018 13:09:02 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://krunZhang.github.io" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://krunZhang.github.io",
+    "headline": "Java·尝试解析器的总结",
+    "datePublished": "Fri Feb 09 2018 12:58:09 GMT+0800",
+    "dateModified": "Wed Mar 21 2018 13:09:02 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "krun",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/head.jpg"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Krun",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/head.jpg"
+        }
+    },
+    "keywords": ",Java,编译原理krun",
+    "description": "krun",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Isolation" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+                    <!-- Isolation Header -->
+                    <style>
+    #scheme-Isolation .header-nav span .tag-count {
+        float: right;
+    }
+    .tag-count {
+        background-color: #E8E8E8;
+        border-radius: 5px;
+        padding: 0px 2px 0px 2px;
+    }
+</style>
+<header class="header">
+    <div class="header-wrapper">
+        <!-- Header Copyright -->
+        <div class="header-copyright">
+            <div class="header-site">
+                ©&nbsp;
+                <script type="text/javascript">
+                    var fd = new Date();
+                    document.write(fd.getFullYear());
+                </script> &nbsp;
+                Krun
+            </div>
+            <!--
+            I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+            It will not impact the appearance and can give developers a lot of support :)
+
+            很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+            它不会影响美观并可以给开发者很大的支持。 :)
+            -->
+            <div>
+                Powered by
+                <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a>
+                <br> Theme -
+                <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a>
+            </div>
+        </div>
+
+        <!-- Header Title -->
+        <span class="header-title header-item">
+            <a href="/" title="Krun">
+                Krun
+            </a>
+        </span>
+
+        <p class="header-slogan header-item">
+            
+                
+                            Hi, nice to meet you
+                                
+                                    
+        </p>
+
+        <!-- Header Nav -->
+        <nav class="header-nav header-item" style="width: 50%">
+            <span class="header-nav-item">
+                <a href="/" title="Home">
+                    <span>
+                        主页
+                    </span>
+                </a>
+            </span>
+
+            <!-- Pages  -->
+            
+
+                <span class="header-nav-item" style="list-style: none; width: 100%;">
+                <!-- Categories  -->
+                    
+                        <li class="dropdown">
+                            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                                标签
+                                 <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" style="list-style: none; -webkit-padding-start: 10px;">
+                                <li style="margin-bottom: 4px">
+                                <a class="tag-link" href="../../../../tags/Java/">Java<span class="tag-count">4</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../tags/JavaScript/">JavaScript<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../tags/反射/">反射<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../tags/算法/">算法<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../tags/编译原理/">编译原理<span class="tag-count">1</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../tags/面试题/">面试题<span class="tag-count">2</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                            <li class="divider"></li>
+                        
+                    
+                </span>
+
+                <span class="header-nav-item" style="list-style: none; width: 100%;">
+                    <!-- Archives  -->
+                    
+                        <li class="dropdown">
+                            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                                归档
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" style="list-style: none; -webkit-padding-start: 10px;">
+                                <li style="margin-bottom: 4px">
+                                    <a class="tag-link" href="../../../../archives/2018/03/">三月 2018<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../archives/2018/02/">二月 2018<span class="tag-count">2</span></a></li><li style="margin-bottom: 4px"><a class="tag-link" href="../../../../archives/2017/09/">九月 2017<span class="tag-count">2</span></a>
+                                </li>    
+                            </ul>
+                        </li>
+                        
+                            <li class="divider"></li>
+                        
+                    
+                </span>
+        </nav>
+        <!-- Header SNS -->
+        <div class="header-item header-sns_list">
+    <!-- E-mail -->
+    
+        <a href="mailto:krunZhang@gmail.com" target="_blank">
+            <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+        </a>
+    
+    
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/krunZhang" target="_blank">
+            <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+        </a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Telegram -->
+    
+
+    
+        <a href="https://segmentfault.com/u/krun" target="_blank">
+            <i class="fa fa-hashtag fa-lg" aria-hidden="true"></i>
+        </a>
+        
+</div>
+    </div>
+</header>
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+
+                    <!-- Post TOC -->
+
+    
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+
+
+    <!-- Isolation Post Header -->
+    <!-- Post thumbnail -->
+    
+        <!-- Post Header Info -->
+        <div class="post-header_info without-thumbnail">
+            <!-- Author Avatar & Name -->
+            <img src="../../../../img/head.jpg" class="avatar-img" width="44px" height="44px" alt="krun's avatar">
+            <span class="name-span">krun</span>
+        </div>
+
+        <!-- Null Thumbnail -->
+        <div class="post_thumbnail-null">
+    
+        </div>
+
+
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+
+    
+        <div class="post-content_wrapper">
+            <p class="post-title">
+                Java·尝试解析器的总结
+            </p>
+            <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>由于我对写解析器只有 <strong>阅读了几篇文章</strong> 的知识量，因此水平并不是很高，此文权当一次个人总结，无法保证所涉及的知识点、思路完全无误，如有错误，还请各位大佬指正。</p>
+<h2 id="从一个正整数表达式开始"><a href="#从一个正整数表达式开始" class="headerlink" title="从一个正整数表达式开始"></a>从一个正整数表达式开始</h2><p>这篇文章围绕的仅仅是一个 <strong>正整数表达式</strong>，而且它很简单，不会出现括号嵌套等情况，我们的目标只是把</p>
+<pre><code class="text">10 * 5 + 1
+</code></pre>
+<p>解析为一个 <code>Token</code> 序列，如下：</p>
+<pre><code class="text">[
+    { type: NUMBER,   value: `10` },
+    { type: OPERATOR, value: `*`  },
+    { type: NUMBER,   value: `5`  },
+    { type: OPERATOR, value: `+`  },
+    { type: NUMBER,   value: `1`  }
+]
+</code></pre>
+<p>我习惯从简单的开始，那么我们先从一个最简单的、只有个位数、没有空格的式子开始:</p>
+<pre><code class="text">1+1
+</code></pre>
+<h2 id="最简单的思路"><a href="#最简单的思路" class="headerlink" title="最简单的思路"></a>最简单的思路</h2><p>其实词法分析器要做的事本质上很简单：对输入的字符串进行遍历，分割成有意义的 <code>Token</code>。<br>因此，最简单的思路就是一个 <code>for</code> 循环:</p>
+<pre><code class="java">String expression = &quot;1+1&quot;;
+for (char ch : expression.toCharArray()) {
+    // 在这里进行处理
+}
+</code></pre>
+<p>所以我们定义一个 <code>Scanner</code>，为了后续方便，顺手实现个简单的单例吧：</p>
+<pre><code class="java">public class Scanner {
+
+      private static volatile Scanner instance;
+
+    public static Scanner getInstance() {
+          if (Scanner.instance == null) {
+              synchronized ( Scanner.class ) {
+                  if (Scanner.instance == null) {
+                    Scanner.instance = new Scanner();
+                }
+            }
+        }
+        return Scanner.instance;
+    }
+
+    private String expression;
+
+    public Scanner from(String expression) {
+        this.expression = expression;
+        return this;
+    }
+
+      public void process() {
+        for (char ch : expression.toCharArray()) {
+            // 在这里进行处理
+        }
+    }
+
+     public static void main(String ... args) {
+        Scanner scanner = Scanner.getInstance().from(&quot;1+1&quot;);
+          scanner.process();
+    }
+}
+</code></pre>
+<h2 id="定义-Token-类型"><a href="#定义-Token-类型" class="headerlink" title="定义 Token 类型"></a>定义 <code>Token</code> 类型</h2><p>在当前的 <code>1+1</code> 表达式中，涉及到的 <code>Token</code>  不多，只有数字、操作符，因此用一个枚举类即可表述:</p>
+<pre><code class="java">public enum Type {
+    INIT,
+    NUMBER,
+    OPERATOR,
+    UNKNOWN;
+
+    public static Type of(char ch) {
+        if (&#39;0&#39; &lt;= ch &amp;&amp; ch &lt;= &#39;9&#39;) {
+            return NUMBER;
+        }
+        if (&quot;+-*/&quot;.indexOf(ch) != -1) {
+            return OPERATOR;
+        }
+        return UNKNOWN;
+    }
+}
+</code></pre>
+<p>同时该枚举类承担辨识字符类型的工作：</p>
+<pre><code class="java">Type.of(&#39;1&#39;) // NUMBER
+Type.of(&#39;+&#39;) // OPERATOR
+Type.of(&#39;a&#39;) // UNKNOWN
+</code></pre>
+<h2 id="定义-Token"><a href="#定义-Token" class="headerlink" title="定义 Token"></a>定义 <code>Token</code></h2><pre><code class="java">public class Token {
+    // 一个 Token 的类型一旦确定，就不可能再改变。
+    private final Type type;
+    // 用以存储 Token 的值。
+    private final StringBuffer value;
+
+    public Token(Type type) {
+        this.type = type;
+        this.value = new StringBuffer();
+    }
+
+    public void appendValue(char ch) {
+        this.value.append(ch);
+    }
+
+    public String getValue() {
+        return this.value.toString();
+    }
+
+    public Type getType() {
+        return this.type;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(&quot;{type: %s, value: `%s`}&quot;,
+            this.getType().name(),
+            this.getValue());
+    }
+}
+</code></pre>
+<h2 id="处理-1-1"><a href="#处理-1-1" class="headerlink" title="处理 1+1"></a>处理 <code>1+1</code></h2><pre><code class="java">public class Scanner {
+      // 省略...  
+      public void process() {
+        for (char ch : expression.toCharArray()) {
+            Type type = Type.of(ch);
+            if (Type.UNKNOWN.equals(type)) {
+                throw new RuntimeException(String.format(&quot;`%c` 并不属于期望的字符类型&quot;, ch));
+            }
+            Token token = new Token(type);
+            token.appendValue(ch);
+            System.out.println(token);
+        }
+    }
+
+     public static void main(String ... args) {
+        Scanner scanner = new Scanner(&quot;1+1&quot;);
+          scanner.process();
+    }
+}
+
+/** 输出
+ * {type: NUMBER,   value: `1`}
+ * {type: OPERATOR, value: `+`}
+ * {type: NUMBER,   value: `1`}
+ */
+</code></pre>
+<h2 id="现在来加点难度-10-1"><a href="#现在来加点难度-10-1" class="headerlink" title="现在来加点难度: 10+1"></a>现在来加点难度: <code>10+1</code></h2><p>现在一个数字可能不止一位了，那么我们该怎么办呢？</p>
+<p>使用状态图：</p>
+<pre><code class="text">   ┌-[ 0-9 ]-┐    ┌-[ +|-|*|/ ]-┐   ┌-[ 0-9 ]-┐
+---(  NUMBER  )--- (  OPERATOR  )---(  NUMBER  )---
+</code></pre>
+<p>具体的理论这里就不赘述了，有兴趣可以自行查阅相关资料，这里简单说一下怎么用：</p>
+<p>现在我们来列个表，看一下对于 <code>10+1</code>，在状态上有什么变化：</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>状态</th>
+<th>Token</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NULL</code></td>
+<td><code>INIT</code></td>
+<td><code>NULL</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>NUMBER</code></td>
+<td>{id: <code>0</code>, type: <code>NUMBER</code>, value: <code>1</code>}</td>
+</tr>
+<tr>
+<td>0</td>
+<td><code>NUMBER</code></td>
+<td>{id: <code>0</code>, type: <code>NUMBER</code>, value: <code>10</code>}</td>
+</tr>
+<tr>
+<td>+</td>
+<td><code>OPERATOR</code></td>
+<td>{id: <code>1</code>, type: <code>OPERATOR</code>, value: <code>+</code>}</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>NUMBER</code></td>
+<td>{id: <code>2</code>, type: <code>NUMBER</code>, value: <code>1</code>}</td>
+</tr>
+</tbody>
+</table>
+<p>可以看到，在读到字符 <code>1</code> 和 <code>0</code> 时，状态没有发生变化，也就是说它们是一个整体（或是一个整体的一部分）。<br>如果在 <code>0</code> 后面还有其他数字，那么直到引起状态改变的字符出现之前，这些字符就组成了整个 <code>Token</code>。</p>
+<p>同时，我们还发现引入状态图后，有个有意思的事：</p>
+<p>从 初始状态 <code>INIT</code> 开始，我们只允许后边是 <code>NUMBER</code> 类型;<br><code>NUMBER</code> 后边允许 <code>NUMBER</code>、<code>OPERATOR</code> 类型;<br><code>OPERATOR</code> 后边允许 <code>NUMBER</code> 类型。</p>
+<p>除此之外的状态都是不合法的，这也就是有时候解析类的包（比如 <code>fast-json</code>）会看到的 <code>Invalid Character</code> 错误的情况。</p>
+<p>所以我们需要改改代码，同时为 <code>Scanner</code> 添加一个更新状态的方法:</p>
+<pre><code class="java">public class Scanner {
+    // 省略
+      private Token token;
+
+      public void setToken(Token token) {
+        this.token = token;
+    }
+
+      public void process() {
+          // 初始化
+          this.setToken(new Token(Type.INIT));
+        for (char ch : expression.toCharArray()) {
+            Type type = Type.of(ch);
+            if (Type.UNKNOWN.equals(type)) {
+                throw new RuntimeException(String.format(&quot;`%c` 并不属于期望的字符类型&quot;, ch));
+            }
+
+            // 根据当前 Token 的类型，选择不同的判断分支
+            switch (token.getType()) {
+                case INIT:
+                    switch (type) {
+                        // 当前是初始状态，遇到了数字, 切换状态。
+                        case NUMBER:
+                            this.setToken(new Token(Type.NUMBER));
+                            this.token.appendValue(ch);
+                            break;
+                        default:
+                            throw new RuntimeException(String
+                                                   .format(&quot;Invalid Character: `%c`&quot;, ch));
+                    }
+                    break;
+                case NUMBER:
+                    switch (type) {
+                        // 当前是数字状态，遇到了数字，追加字符。
+                        case NUMBER:
+                            this.token.appendValue(ch);
+                            break;
+                        // 当前是数字状态，遇到了操作符，切换状态。
+                        case OPERATOR:
+                            this.setToken(new Token(Type.OPERATOR));
+                            this.token.appendValue(ch);
+                            break;
+                        default:
+                            throw new RuntimeException(String
+                                                   .format(&quot;Invalid Character: `%c`&quot;, ch));
+                    }
+                    break;
+                case OPERATOR:
+                    switch (type) {
+                        // 当前是操作符状态，遇到了数字，切换状态。
+                        case NUMBER:
+                            this.setToken(new Token(Type.NUMBER));
+                            this.token.appendValue(ch);
+                            break;
+                        default:
+                            throw new RuntimeException(String
+                                                   .format(&quot;Invalid Character: `%c`&quot;, ch));
+                    }
+                    break;
+            }
+            System.out.println(token);
+        }
+    }
+}
+</code></pre>
+<pre><code class="java">
+/** 输出
+ * {type: NUMBER,   value: `1`}
+ * {type: NUMBER,   value: `10`}
+ * {type: OPERATOR, value: `+`}
+ * {type: NUMBER,   value: `1`}
+ */
+</code></pre>
+<h2 id="试着简化一下"><a href="#试着简化一下" class="headerlink" title="试着简化一下"></a>试着简化一下</h2><p>我们刚才用了一个巨大无比的 <code>switch</code> 结构来描述状态图，现在我们由内而外试着简化这个巨无霸。</p>
+<p>###　先从内部开始：</p>
+<pre><code class="java">switch (type) {
+    // 当前是 ** 状态，遇到了 ** , 执行 ** 操作。
+    case NUMBER:
+        // ...
+        break;
+    case ...
+    default:
+        throw new RuntimeException(String.format(&quot;Invalid Character: `%c`&quot;, ch));
+}
+</code></pre>
+<p>其实稍微归纳总结一下就能发现， <code>执行 ** 操作</code> 这部分，总的来说只有两种：</p>
+<pre><code class="text">NewToken
+    对应着
+        {
+            token = new Token(Type.NUMBER);
+            token.appendValue(ch);
+        }
+AppendValue
+    对应着
+        {
+            token.appendValue(ch);
+        }
+</code></pre>
+<p>现在我们再引入一个工具来帮助我们简化：表驱动。</p>
+<p>其实从上面的对应关系不难发现，我们可以用 <code>HashMap</code> 来简单模拟一个表，帮助我们减少工作。</p>
+<p>在此之前，我们需要把上述关系中的 <code>{操作}</code> 部分用一个接口来解耦：</p>
+<pre><code class="java">public interface Behavior {
+    void apply(Token token, Type type, char ch);
+}
+</code></pre>
+<p>然后我们来定义一个枚举类 <code>Behaviors</code> 来表示操作类型：</p>
+<pre><code class="java">public enum Behaviors {
+    NewToken,
+      AppendValue;
+
+      private static final Scanner scanner;
+    private static final HashMap&lt;Behaviors, Behavior&gt; behaviorMap;
+
+    static {
+          scanner = Scanner.getInstance();
+        behaviorMap = new HashMap&lt;&gt;();
+        behaviorMap.put(Behaviors.NewToken, (token, type, ch) -&gt; {
+            token = new Token(type);
+            token.appendValue(ch);
+              scanner.setToken(token);
+        });
+        behaviorMap.put(Behaviors.AppendValue, (token, type, ch) -&gt; {
+            token.appendValue(ch);
+        });
+    }
+
+    public void apply(Token token, Type type, char ch) {
+        behaviorMap.get(this)
+                .apply(token, type, ch);
+    }
+}
+</code></pre>
+<p>那么现在 <em>执行 ** 操作</em> 这部分，现在可以用 <code>HashMap</code> 来表述了：</p>
+<pre><code class="java">// 根据当前 Token 的类型，选择不同的判断分支
+switch (token.getType()) {
+    case INIT:
+        HashMap&lt;Type, Behaviros&gt; behaviorsMap = new HashMap&lt;&gt;();
+        // 当前是初始状态，遇到了数字, 切换状态。
+        behaviorsMap.put(Type.NUMBER, Behaviors.NewToken);
+        break;
+      case NUMBER:
+           HashMap&lt;Type, Behaviros&gt; behaviorsMap = new HashMap&lt;&gt;();
+        // 当前是数字状态，遇到了数字，追加字符。
+        behaviorsMap.put(Type.NUMBER, Behaviors.AppendValue);
+        // 当前是数字状态，遇到了操作符，切换状态。
+        behaviorsMap.put(Type.Operator, Behaviors.NewToken);
+         break;
+    case OPERATOR:
+        HashMap&lt;Type, Behaviros&gt; behaviorsMap = new HashMap&lt;&gt;();
+        // 当前是操作符状态，遇到了数字，切换状态。
+        behaviorsMap.put(Type.NUMBER, Behaviors.NewToken);
+        break;
+}
+</code></pre>
+<p>既然是 <code>Java</code> ，那么让我们来让这部分看起来 <code>OO</code> 一些：</p>
+<pre><code class="java">public class BehaviorMap {
+    private final HashMap&lt;Type, Behaviors&gt; map;
+
+      public BehaviorMap() {
+        this.map = new HashMap();
+    }
+
+      public BehaviorMap at(Type type, Behaviors behaviors) {
+        this.map.put(type, behaviors);
+          return this;
+    }
+
+     public BehaviorsTable done() {
+          return BehaviorsTable.getInstance();
+    }
+}
+</code></pre>
+<p>现在再来看看：</p>
+<pre><code class="java">// 根据当前 Token 的类型，选择不同的判断分支
+switch (token.getType()) {
+    case INIT:
+        BehaviorMap map = new BehaviorMap();
+        map
+               // 当前是初始状态，遇到了数字, 切换状态。
+              .at(Type.NUMBER, Behaviors.NewToken);
+        break;
+      case NUMBER:
+           BehaviorMap map = new BehaviorMap();
+        map
+              // 当前是数字状态，遇到了数字，追加字符。
+             .at(Type.NUMBER, Behaviors.AppendValue);
+            // 当前是数字状态，遇到了操作符，切换状态。
+            .at(Type.Operator, Behaviors.NewToken);
+         break;
+    case OPERATOR:
+        BehaviorMap map = new BehaviorMap();
+        map
+              // 当前是操作符状态，遇到了数字，切换状态。
+              .at(Type.NUMBER, Behaviors.NewToken);
+        break;
+}
+</code></pre>
+<h3 id="简化外部"><a href="#简化外部" class="headerlink" title="简化外部"></a>简化外部</h3><p>现在我们可以看到表驱动对于消除判断分支的威力了，那么我们可以用同样的方法将外部 <code>switch</code> 也消除掉：</p>
+<pre><code class="java">public class BehaviorsTable {
+
+    private static volatile BehaviorsTable instance;
+
+    public static BehaviorsTable getInstance() {
+        if (BehaviorsTable.instance == null) {
+            synchronized ( BehaviorsTable.class ) {
+                if (BehaviorsTable.instance == null) {
+                    BehaviorsTable.instance = new BehaviorsTable();
+                }
+            }
+        }
+        return BehaviorsTable.instance;
+    }
+
+    private final HashMap&lt;Type, BehaviorMap&gt; map;
+
+    public BehaviorsTable () {
+        this.map = new HashMap&lt;&gt;();
+    }
+
+    public BehaviorMap register(Type type) {
+        BehaviorMap behaviorMap = new BehaviorMap();
+        this.map.put(type, behaviorMap);
+        return behaviorMap;
+    }
+}
+</code></pre>
+<p>现在整个巨大的 <code>switch</code> 结构我们就可以简化为:</p>
+<pre><code class="java">BehaviorsTable
+    .getInstance()
+    .register(Type.INIT)
+        .at(Type.NUMBER, Behaviors.NewToken)
+        .done()
+    .register(Type.NUMBER)
+          .at(Type.NUMBER, Behaviors.AppendValue)
+          .at(Type.OPERATOR, Behaviors.NewToken)
+          .done()
+      .register(Type.OPERATOR)
+          .at(Type.NUMBER, Behaviors.NewToken)
+          .done();
+</code></pre>
+<p>现在 <code>process</code> 方法我们就可以简化为:</p>
+<pre><code class="java">public void process() {
+    this.setToken(new Token(Type.INIT));
+    for (char ch : expression.toCharArray()) {
+        Type type = Type.of(ch);
+        if (Type.UNKNOWN.equals(type)) {
+            throw new RuntimeException(String.format(&quot;`%c` 并不属于期望的字符类型&quot;, ch));
+        }
+        BehaviorsTable
+            .getInstance()
+               // 根据当前 Token 类型获取对应的处理对策
+            .get(this.token.getType())
+                  // 获取当前字符所属的处理行为
+                .is(type)
+                .apply(type, ch);
+        System.out.println(token);
+    }
+}
+</code></pre>
+<blockquote>
+<p> 我们在源码里做了一些改动，请参考文章底部全部代码。</p>
+</blockquote>
+<h2 id="让我们测试一下"><a href="#让我们测试一下" class="headerlink" title="让我们测试一下"></a>让我们测试一下</h2><pre><code class="java">public static void main(String ... args) {
+    Scanner scanner = Scanner.getInstance();
+
+    scanner.from(&quot;10+1&quot;).process();
+      /**
+       * {type: NUMBER, value: `1`}
+       * {type: NUMBER, value: `10`}
+       * {type: NUMBER, value: `+`}
+       * {type: NUMBER, value: `1`}
+       */
+
+      scanner.from(&quot;10 +1&quot;).process();
+       /**
+       * {type: NUMBER, value: `1`}
+       * {type: NUMBER, value: `10`}
+       * Exception in thread &quot;main&quot; java.lang.RuntimeException: ` ` 并不属于期望的字符类型
+       */
+
+      scanner.from(&quot;10++1&quot;).process();
+      /**
+       * {type: NUMBER, value: `1`}
+       * {type: NUMBER, value: `10`}
+       * {type: OPERATOR, value: `+`}
+    * Exception in thread &quot;main&quot; java.lang.RuntimeException: Invalid Character: `+` for Token `OPERATOR`
+       */
+}
+</code></pre>
+<p>现在看起来一切正常，但是别忘了 <code>Scanner</code> 的工作是将输入的字符串分割为 <code>Token</code> 序列，因此我们需要让 <code>process</code> 方法返回处理后的 <code>LinkedList&lt;Token&gt;</code> 序列。</p>
+<p>为此我们需要将每次新生成的 <code>Token</code> 保存下来：</p>
+<pre><code class="java">public class Scanner {
+    private LinkedList&lt;Token&gt; tokens;
+      private Token token;
+
+      public void addToken(Token token) {
+        this.token = token;
+          this.tokens.add(token);
+    }
+
+       public LinkedList&lt;Token&gt; process() {
+        this.setToken(new Token(Type.INIT));
+        for (char ch : expression.toCharArray()) {
+            Type type = Type.of(ch);
+            if (Type.UNKNOWN.equals(type)) {
+                throw new RuntimeException(String.format(&quot;`%c` 并不属于期望的字符类型&quot;, ch));
+            }
+            BehaviorsTable
+                    .getInstance()
+                    .get(this.token.getType())
+                    .is(type)
+                    .apply(type, ch);
+        }
+        return this.tokens;
+    }
+
+       public static void main(String ... args) {
+        Scanner scanner = Scanner.getInstance().from(&quot;10*5+1&quot;);
+          LinkedList&lt;Token&gt; tokens = scanner.process();
+          for (Token token : tokens) {
+              System.out.println(token);
+        }
+    }
+}
+</code></pre>
+<p>记得将 <code>Behaviors</code> 初始化部分中 <code>NewToken</code> 里的行为修改一下：</p>
+<pre><code class="java">        behaviorMap.put(Behaviors.NewToken, (token, type, ch) -&gt; {
+            token = new Token(type);
+            token.appendValue(ch);
+              //scanner.setToken(token);
+            scanner.addToken(token);
+        });
+</code></pre>
+<p>现在再看看结果：</p>
+<pre><code class="text">{type: NUMBER, value: `10`}
+{type: OPERATOR, value: `*`}
+{type: NUMBER, value: `5`}
+{type: OPERATOR, value: `+`}
+{type: NUMBER, value: `1`}
+</code></pre>
+<p>看起来一切都如我们所愿！现在离最初的目标只剩下空格的处理了，得益于我们抽象了行为 <code>Behaviors</code>，我们只需要在 <code>Type</code> 中注册空格，然后为 <code>BehaviorsTable</code> 注册各种类型下对空格的处理就行了：</p>
+<pre><code class="java">public enum Type {
+    SPACE;
+
+      public Tpye of(char ch) {
+        if (&#39; &#39; == ch) return SPACE;
+    }
+}
+
+public enum Behaviors {
+    Continue;
+
+      static {
+        behaviorMap
+              .put(Behaviors.Continue, (token, type, ch) -&gt; {
+                // 留空就行了
+            })
+    }
+}
+
+public class Scanner {
+       static {
+        BehaviorsTable
+                .getInstance()
+                .register(Type.INIT)
+                    .at(Type.NUMBER, Behaviors.NewToken)
+                       .at(Type.SPACE, Behaviors.Continue)
+                    .done()
+                .register(Type.NUMBER)
+                    .at(Type.NUMBER, Behaviors.AppendValue)
+                    .at(Type.OPERATOR, Behaviors.NewToken)
+                       .at(Type.SPACE, Behaviors.Continue)
+                    .done()
+                .register(Type.OPERATOR)
+                    .at(Type.NUMBER, Behaviors.NewToken)
+                       .at(Type.SPACE, Behaviors.Continue)
+                    .done();
+    }
+}
+</code></pre>
+<h2 id="还缺什么呢"><a href="#还缺什么呢" class="headerlink" title="还缺什么呢"></a>还缺什么呢</h2><p>我们现在完成的扫描器实际上无法识别出 <code>1 1 + 0</code> 是个错误的表达式，它会解析出如下序列：</p>
+<pre><code class="text">{type: NUMBER, value: 11}
+{type: OPERATOR, value: +}
+{type: NUMBER, value: 0}
+</code></pre>
+<p>我个人希望这部分工作往上层放，由消化 <code>Token</code> 序列的调用者通过模式匹配的方式去验证，不过这样的话，<code>Type.SPACE</code> 的处理就不能随意 <code>Continue</code> 了，有兴趣的话看官可以自行尝试一下 : P</p>
+<h2 id="全部代码"><a href="#全部代码" class="headerlink" title="全部代码"></a>全部代码</h2><p>一个小尝试，就不传 Github 了，直接放这儿吧 （其实就是懒…</p>
+<h3 id="Scanner-java"><a href="#Scanner-java" class="headerlink" title="Scanner.java"></a>Scanner.java</h3><pre><code class="java">public class Scanner {
+
+   private static volatile Scanner instance;
+
+   public static Scanner getInstance() {
+      if (Scanner.instance == null) {
+         synchronized ( Scanner.class ) {
+            if (Scanner.instance == null) {
+               Scanner.instance = new Scanner();
+            }
+         }
+      }
+      return Scanner.instance;
+   }
+
+   static {
+     // 注册行为表
+      BehaviorsTable
+            .getInstance()
+            // 注册 INIT 状态的行为表
+            .register(Type.INIT)
+               .at(Type.NUMBER, Behaviors.NewToken)
+               .at(Type.SPACE, Behaviors.Continue)
+               .done()
+            .register(Type.NUMBER)
+               .at(Type.NUMBER, Behaviors.AppendValue)
+               .at(Type.OPERATOR, Behaviors.NewToken)
+               .at(Type.SPACE, Behaviors.Continue)
+               .done()
+            .register(Type.OPERATOR)
+               .at(Type.NUMBER, Behaviors.NewToken)
+               .at(Type.SPACE, Behaviors.Continue)
+               .done();
+   }
+
+   private String expression;
+   private LinkedList&lt;Token&gt; tokens;
+   private Token token;
+
+   public Scanner from(String expression) {
+      this.expression = expression;
+      this.tokens = new LinkedList&lt;&gt;();
+      return this;
+   }
+
+   public void setToken(Token token) {
+      this.token = token;
+   }
+
+   public Token getToken ( ) {
+      return token;
+   }
+
+   public LinkedList&lt;Token&gt; process() {
+      this.setToken(new Token(Type.INIT));
+      for (char ch : expression.toCharArray()) {
+         Type type = Type.of(ch);
+         if (Type.UNKNOWN.equals(type)) {
+            throw new RuntimeException(String.format(&quot;`%c` 并不属于期望的字符类型&quot;, ch));
+         }
+         BehaviorsTable
+               .getInstance()
+                   // 获取当前 Token 类型所适用的行为表
+               .get(this.token.getType())
+                       // 获取当前字符所适用的行为
+                       .is(type)
+                       .apply(type, ch);
+      }
+      return this.tokens;
+    }
+
+   public void addToken(Token token) {
+     // 更新一下当前 Token
+      this.token = token;
+      this.tokens.add(token);
+   }
+
+   public static void main(String ... args) {
+        Scanner scanner = Scanner.getInstance().from(&quot;10 * 5+1&quot;);
+       LinkedList&lt;Token&gt; tokens = scanner.process();
+       for (Token token : tokens) {
+          System.out.println(token);
+      }
+    }
+}
+</code></pre>
+<h3 id="Type-java"><a href="#Type-java" class="headerlink" title="Type.java"></a>Type.java</h3><pre><code class="java">// Token 类型枚举
+public enum Type {
+    INIT,        // 初始化时使用
+    SPACE,        // 空格
+    NUMBER,        // 数字
+    OPERATOR,    // 操作符
+    UNKNOWN;    // 未知类型
+
+    public static Type of(char ch) {
+        if (&#39; &#39; == ch) {
+            return SPACE;
+        }
+        if (&#39;0&#39; &lt;= ch &amp;&amp; ch &lt;= &#39;9&#39;) {
+            return NUMBER;
+        }
+        if (&quot;+-*/&quot;.indexOf(ch) != -1) {
+            return OPERATOR;
+        }
+        return UNKNOWN;
+    }
+}
+</code></pre>
+<h3 id="Token-java"><a href="#Token-java" class="headerlink" title="Token.java"></a>Token.java</h3><pre><code class="java">public class Token {
+    // 一个 Token 的类型一旦确定，就不可能再改变。
+    private final Type type;
+    // 用以存储 Token 的值。
+    private final StringBuffer value;
+
+    public Token(Type type) {
+        this.type = type;
+        this.value = new StringBuffer();
+    }
+
+      // 向 value 中追加字符
+    public void appendValue(char ch) {
+        this.value.append(ch);
+    }
+
+    public String getValue() {
+        return this.value.toString();
+    }
+
+    public Type getType() {
+        return this.type;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(&quot;{type: %s, value: `%s`}&quot;,
+            this.getType().name(),
+            this.getValue());
+    }
+}
+</code></pre>
+<h3 id="Behavior-java"><a href="#Behavior-java" class="headerlink" title="Behavior.java"></a>Behavior.java</h3><pre><code class="java">public interface Behavior {
+    /**
+     * 将行为抽象出来
+     * @param token 当前的 token
+     * @param type 读入字符的类型
+     * @param ch 读入的字符
+     */
+    void apply(Token token, Type type, char ch);
+}
+</code></pre>
+<h3 id="Behaviors-java"><a href="#Behaviors-java" class="headerlink" title="Behaviors.java"></a>Behaviors.java</h3><pre><code class="java">// 预设行为
+public enum Behaviors {
+   NewToken,        // 新建一个指定类型的 Token, 将当前字符保存到新 Token
+   AppendValue,        // 将当前字符追加到当前 Token 的值中
+   Continue,        // 跳过当前字符
+   InvalidCharacter; // 当前 Token 类型所不期望的字符类型，会抛出一个异常
+
+      // 持有一个引用就不用老是调用 getInstance()。
+   private static final Scanner scanner;
+      // 为预设行为指定行为内容
+   private static final HashMap&lt;Behaviors, Behavior&gt; behaviorMap;
+
+   static {
+      scanner = Scanner.getInstance();
+      behaviorMap = new HashMap&lt;&gt;();
+     // 指定 NewToken，行为逻辑参见枚举值说明
+      behaviorMap.put(Behaviors.NewToken, (token, type, ch) -&gt; {
+         token = new Token(type);
+         token.appendValue(ch);
+         scanner.addToken(token);
+      });
+     // 指定 AppendValue，行为逻辑参见枚举值说明
+      behaviorMap.put(Behaviors.AppendValue, (token, type, ch) -&gt; {
+         token.appendValue(ch);
+      });
+     // 指定 Continue，行为逻辑参见枚举值说明
+      behaviorMap.put(Behaviors.Continue, (token, type, ch) -&gt; {});
+     // 指定 InvalidCharacter，行为逻辑参见枚举值说明
+      behaviorMap.put(Behaviors.InvalidCharacter, (token, type, ch) -&gt; {
+         throw new RuntimeException(String
+                                    .format(&quot;Invalid Character: `%c` for Token `%s`&quot;,
+                                            ch, token.getType().name()));
+      });
+   }
+
+   public void apply(Type type, char ch) {
+     // 获取预设行为
+      behaviorMap.get(this)
+            // 向行为中传递当前 Token, 当前字符类型，当前字符
+            .apply(scanner.getToken(), type, ch);
+   }
+}
+</code></pre>
+<h3 id="BehaviorsMap-java"><a href="#BehaviorsMap-java" class="headerlink" title="BehaviorsMap.java"></a>BehaviorsMap.java</h3><pre><code class="java">// 保存某一字符类需要执行何种预设行为的映射关系
+public class BehaviorsMap {
+    private final HashMap&lt;Type, Behaviors&gt; map;
+   public BehaviorsMap() {
+        this.map = new HashMap();
+    }
+
+    /**
+     * 注册指定类型所需的预设行为
+     * @param type 指定类型
+     * @param behaviors 指定所需的预设行为
+     */
+   public BehaviorsMap at(Type type, Behaviors behaviors) {
+        this.map.put(type, behaviors);
+       return this;
+    }
+
+  // 注册完后回退操作域到 BehaviorsTable
+    public BehaviorsTable done() {
+      return BehaviorsTable.getInstance();
+   }
+
+  // 获取指定类型的预设行为
+   public Behaviors is (Type type) {
+      Behaviors behaviors = this.map.get(type);
+      if (behaviors == null) {
+        // 如果没有注册，那么使用 InvalidCharacter 预设行为，因为出现了非预期的字符类型
+         behaviors = Behaviors.InvalidCharacter;
+      }
+      return behaviors;
+   }
+}
+</code></pre>
+<h3 id="BehaviorsTable-java"><a href="#BehaviorsTable-java" class="headerlink" title="BehaviorsTable.java"></a>BehaviorsTable.java</h3><pre><code class="java">// 行为表
+public class BehaviorsTable {
+
+    private static volatile BehaviorsTable instance;
+
+    public static BehaviorsTable getInstance() {
+        if (BehaviorsTable.instance == null) {
+            synchronized ( BehaviorsTable.class ) {
+                if (BehaviorsTable.instance == null) {
+                    BehaviorsTable.instance = new BehaviorsTable();
+                }
+            }
+        }
+        return BehaviorsTable.instance;
+    }
+
+    private final HashMap&lt;Type, BehaviorMap&gt; map;
+
+    public BehaviorsTable () {
+        this.map = new HashMap&lt;&gt;();
+    }
+
+      // 注册指定当前类型，返回一个空的 BehaviorsMap 来注册预设行为
+    public BehaviorsMap register(Type type) {
+        BehaviorsMap behaviorsMap = new BehaviorsMap();
+        this.map.put(type, behaviorsMap);
+        return behaviorsMap;
+    }
+
+   // 获取指定当前类型的 BehaviorsMap
+    public BehaviorsMap get(Type type) {
+        return this.map.get(type);
+    }
+}
+</code></pre>
+
+            
+                <blockquote>
+                    <p>
+                         
+                            本作品采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">署名-非商业性使用-禁止演绎 4.0 国际许可协议</a> 进行许可。
+                        
+                        <br>
+                        本文链接： https://krunZhang.github.io/2018/02/09/Java·尝试解析器的总结/
+                    </p>
+                </blockquote>
+            
+        </div>
+    
+</div>
+
+
+                
+                    <!-- Paradox Post Info -->
+                    
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="../../26/Java·变量里存的到底是什么/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="../../../../2017/09/18/算法·JavaScript·电话号码分身-小米2017秋招真题/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/lazyload.min.js", true)</script>
+
+
+
+    <script>lsloader.load("js_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/js.min.js", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/nprogress.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/smoothscroll.js", true)</script>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="../../../../css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/prettify.min.js", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
