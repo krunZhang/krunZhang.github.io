@@ -267,7 +267,7 @@
 
     
         <meta property="article:published_time" content="Thu Mar 22 2018 16:01:04 GMT+0800">
-        <meta property="article:modified_time" content="Thu Mar 22 2018 16:05:15 GMT+0800">
+        <meta property="article:modified_time" content="Thu Mar 22 2018 16:18:02 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -290,7 +290,7 @@
     "mainEntityOfPage": "https://krunZhang.github.io/2018/03/22/JDK10的新特性和增强功能/index.html",
     "headline": "JDK10的新特性和增强功能",
     "datePublished": "Thu Mar 22 2018 16:01:04 GMT+0800",
-    "dateModified": "Thu Mar 22 2018 16:05:15 GMT+0800",
+    "dateModified": "Thu Mar 22 2018 16:18:02 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "krun",
@@ -625,7 +625,7 @@ List &lt;CharSequence&gt; newList = List.copyOf(list);
 <p>文件被拥有者以外的用户访问时将导致错误并退出程序。</p>
 <p>为了防止在生产环境中对密码文件进行了无意的编辑，建议只部署可读的散列密码文件。明文密码的散列密码列表可以用 <em>JMX</em> 代理预先生成。</p>
 <p>在 <em>JMX</em> 运行期间，建议不要编辑密码文件。程序会对文件的完整性做一个保护，因此修改既可能丢失。</p>
-<h3 id="hotspot-gc-G1-的-JEP-307-完全并行-GC"><a href="#hotspot-gc-G1-的-JEP-307-完全并行-GC" class="headerlink" title="hotspot/gc G1 的 JEP 307 完全并行 GC"></a><code>hotspot/gc</code> G1 的 <em>JEP 307 完全并行 GC</em></h3><p><em>G1</em> 垃圾收集器就是为了避免 <em>完全 GC</em> (<em>full collections</em>) , 但是当并行收集无法快速回收内存时，会产生一次 <em>完全回退 GC</em> (<em>fall back full GC</em>) 。</p>
+<h3 id="hotspot-gc-JEP-307-G1-的-完全并行-GC"><a href="#hotspot-gc-JEP-307-G1-的-完全并行-GC" class="headerlink" title="hotspot/gc JEP 307 G1 的 完全并行 GC"></a><code>hotspot/gc</code> <em>JEP 307</em> G1 的 <em>完全并行 GC</em></h3><p><em>G1</em> 垃圾收集器就是为了避免 <em>完全 GC</em> (<em>full collections</em>) , 但是当并行收集无法快速回收内存时，会产生一次 <em>完全回退 GC</em> (<em>fall back full GC</em>) 。</p>
 <p>之前 <em>G1</em> 的 <em>完全GC</em> 使用的是单线程标记扫描压缩算法（<em>mark-sweep-compact</em>），现在通过 <em>JEP 307</em>，<em>完全GC</em> 得以并行化，同时现在会使用与 <em>年轻代</em> 、<em>混合收集</em> 相同的并行工作线程数量。</p>
 <h3 id="security-libs-java-security-JEP-319-根证书"><a href="#security-libs-java-security-JEP-319-根证书" class="headerlink" title="security-libs/java.security JEP 319 根证书"></a><code>security-libs/java.security</code> <em>JEP 319</em> 根证书</h3><p><em>OpenJDK</em> 中的 <em>cacerts</em> 密钥库在相当长一段时间内是空的，这将导致未指定 <code>javax.net.ssl.trustStore</code> 属性的情况下 <em>TLS 连接</em> 的创建会被阻止。现在<code>Oracle</code> 的 <em>Java SE 根证书</em> 被填充至 <em>OpenJDK</em> 的 <em>cacerts</em> 中。</p>
 <h3 id="security-libs-javax-net-ssl-TLS-会话散列-和-主密钥扩展-的支持"><a href="#security-libs-javax-net-ssl-TLS-会话散列-和-主密钥扩展-的支持" class="headerlink" title="security-libs/javax.net.ssl TLS 会话散列 和 主密钥扩展 的支持"></a><code>security-libs/javax.net.ssl</code> <em>TLS 会话散列</em> 和 <em>主密钥扩展</em> 的支持</h3><p>在是一个对 <a href="https://tools.ietf.org/html/rfc7627" target="_blank" rel="noopener">RFC 7627</a> 的支持。</p>
