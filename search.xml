@@ -10,7 +10,9 @@
       
         <tags>
             
-            <tag> -java -jdk </tag>
+            <tag> java </tag>
+            
+            <tag> jdk </tag>
             
         </tags>
       
